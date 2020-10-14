@@ -1,0 +1,15 @@
+
+$backcolor: white;
+$headerbackcolor:#cccc;
+$headertitle:black;
+$headersubtitle:#6d6a6a;
+
+body {
+   background-color:$backcolor;
+   padding:10px;
+}
+
+.paging {
+    display: flex;
+    flex-wrap: wrap;
+}
