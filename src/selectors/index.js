@@ -6,8 +6,11 @@ const calculatepriceincrease = (currentprice, openprice) => {
     return parseFloat(currentprice) - parseFloat(openprice)
 }
 
+const calculatepercentageincrease = (currentprice, openprice) => {
+    return (((currentprice - openprice) / currentprice) * 100).toFixed(2)
+}
+
 const  compare = (a, b) => {
-    // Use toUpperCase() to ignore character casing
     const bandA = a.priceincrease
     const bandB = b.priceincrease
 
@@ -28,7 +31,8 @@ export const getSortedCurrency = createSelector([ currencySelector ], (currency)
             "currencyname" : currency[key].USD.FROMSYMBOL,
             "currentprice" : currency[key].USD.PRICE.toFixed(2),
             "openprice" : currency[key].USD.OPENDAY.toFixed(2),
-            "priceincrease": calculatepriceincrease(currency[key].USD.PRICE.toFixed(2), currency[key].USD.OPENDAY.toFixed(2))
+            "priceincrease": calculatepriceincrease(currency[key].USD.PRICE.toFixed(2), currency[key].USD.OPENDAY.toFixed(2)),
+            "percentageincrease": calculatepercentageincrease(currency[key].USD.PRICE.toFixed(2), currency[key].USD.OPENDAY.toFixed(2))
         }
         data.push(cdata)
     })

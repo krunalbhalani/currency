@@ -5,9 +5,9 @@ import { CryptoCurrencyTypes } from "../util/api";
 
   function* handleCurrencyFetchList() {
     try {
-      const res = yield call(getCurrency);
-      const payload = res ? res.data.Data : {};
-      let CurrencyString =''
+      const res = yield call(getCurrency)
+      const payload = res ? res.data.Data : {}
+      let CurrencyString
       let i = 0
       if(payload){
         Object.keys(payload).slice(0, 10).map((key => {

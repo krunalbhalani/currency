@@ -12,7 +12,6 @@ class CurrencyList extends Component
     }
 
     render() {
-        console.log('currency===', this.props.currency)
         return(
             <div>
                 <CurrencyData currency={this.props.currency} />

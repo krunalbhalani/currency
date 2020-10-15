@@ -3,7 +3,6 @@ import Table from 'react-bootstrap/Table'
 import CurrencyItems from '../CurrencyItems'
 
 const CurrencyData = ({currency}) => {
-      console.log('currency11==' + currency)
       return (
         <div>
             <div>
@@ -11,14 +10,13 @@ const CurrencyData = ({currency}) => {
                     <thead>
                         <tr>
                             <th>Coin Name</th>
-                            <th>Current Price</th>
-                            <th>Opening Price</th>
+                            <th>Current Price (USD)</th>
+                            <th>Opening Price (USD)</th>
                             <th>Price Increased</th>
                         </tr>
                     </thead>
                     <tbody>
                         <CurrencyItems currency={currency}/>
-                        
                     </tbody>
                 </Table>
             </div>
